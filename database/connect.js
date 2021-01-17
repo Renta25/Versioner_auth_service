@@ -3,8 +3,9 @@ const mariadb = require('mariadb');
 const pool = mariadb.createPool({
      host: process.env.DB_HOST || 'localhost',
      port: process.env.DB_PORT || 3306,
-     user: process.env.DB_USER, 
-     password: process.env.DB_PASS,
+     user: process.env.DB_USER || 'mysql', 
+     password: process.env.DB_PASS || '',
+     database: process.env.DB_DATABASE || 'mysql',
      connectionLimit: process.env.DB_CON_LIMIT || 5
 });
 checkConncetion()
